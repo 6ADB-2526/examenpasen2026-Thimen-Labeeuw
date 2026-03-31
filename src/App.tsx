@@ -1,14 +1,19 @@
 import { useState } from "react";
-import RegistrationForm from "./components/RegistrationForm";
-
+import UserList from "./components/UserList/UserList";
+import RegistrationForm from "./components/Registration/RegistrationForm";
 export default function App() {
+  const GeregistreerdePersonen = ["Karel", "Els", "Piet"];
+  const [totalUsers, setTotalUsers] = useState(["Karel"])
 
-  return (
-    const GeregistreerdePersonen = ["Karel", "Els", "Piet"];
+  function onReg(name : string){
+    setTotalUsers([...totalUsers, name])
+  }
+
+  return <>
     <div>
-      <RegistrationForm />
+      <RegistrationForm onRegister={onReg}/>
       <hr />
-      <UserList />
+      <UserList users={totalUsers} registeredUsers={GeregistreerdePersonen}/>
     </div >
-  );
+  </>;
 }

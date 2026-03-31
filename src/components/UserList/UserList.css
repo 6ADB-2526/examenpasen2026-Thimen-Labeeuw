@@ -1,0 +1,8 @@
+.reg{
+    color: green
+}
+
+.unreg{
+    color: red;
+    font-weight: 5px;
+}
